@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#09090b" />
+  <meta name="description" content="BlackGlass Saints — dark alternative rock and alt-metal fronted by Nyka Snow. Original music. Illinois live lineup forming now." />
+  <meta property="og:title" content="BlackGlass Saints" />
+  <meta property="og:description" content="Beautiful damage. Dark alt-rock with teeth. Fronted by Nyka Snow." />
+  <meta property="og:type" content="website" />
+  <title>BlackGlass Saints | Dark Alt-Rock</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20fill%3D%22%2309090b%22%2F%3E%3Cpath%20d%3D%22M8%208h48v48H8z%22%20fill%3D%22none%22%20stroke%3D%22%23a20f23%22%20stroke-width%3D%222%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2238%22%20text-anchor%3D%22middle%22%20fill%3D%22%23f5f1ee%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%3EBGS%3C%2Ftext%3E%3C%2Fsvg%3E" type="image/svg+xml" />
+<style>
+:root {
+  --bg: #09090b;
+  --panel: #111116;
+  --panel-2: #15151c;
+  --text: #f5f1ee;
+  --muted: #b7adb0;
+  --line: rgba(255,255,255,.11);
+  --red: #a20f23;
+  --red-bright: #d11b34;
+  --glass: rgba(255,255,255,.045);
+  --max: 1180px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 15% 12%, rgba(162,15,35,.17), transparent 32rem),
+    radial-gradient(circle at 90% 45%, rgba(162,15,35,.08), transparent 34rem),
+    var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(115deg, transparent 0 46%, rgba(255,255,255,.018) 47%, transparent 49% 100%);
+  opacity: .6;
+  z-index: -1;
+}
+
+.noise {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .06;
+  z-index: 100;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.95' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+}
+
+a { color: inherit; }
+.section-pad { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; padding: 92px 0; }
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 14px max(20px, calc((100vw - var(--max))/2));
+  background: rgba(9,9,11,.82);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(18px);
+}
+
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.brand-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(209,27,52,.6);
+  background: linear-gradient(145deg, rgba(209,27,52,.2), rgba(255,255,255,.025));
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+.brand-name { font-family: Georgia, 'Times New Roman', serif; font-size: 18px; letter-spacing: .04em; }
+.site-nav { display: flex; align-items: center; gap: 24px; }
+.site-nav a { text-decoration: none; color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: .13em; }
+.site-nav a:hover { color: var(--text); }
+.menu-toggle { display: none; }
+
+.hero {
+  position: relative;
+  min-height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 115px;
+  padding-bottom: 115px;
+}
+.hero-glow {
+  position: absolute;
+  width: 34rem;
+  height: 34rem;
+  right: -10rem;
+  top: 5rem;
+  background: radial-gradient(circle, rgba(209,27,52,.28), rgba(209,27,52,.06) 40%, transparent 70%);
+  filter: blur(8px);
+  pointer-events: none;
+}
+.eyebrow, .section-kicker { color: #d7c8ca; text-transform: uppercase; letter-spacing: .2em; font-size: 12px; font-weight: 700; }
+.hero h1 {
+  margin: 18px 0 22px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(68px, 12vw, 168px);
+  line-height: .78;
+  letter-spacing: -.06em;
+  font-weight: 700;
+  max-width: 1050px;
+}
+.hero h1 span { color: transparent; -webkit-text-stroke: 1px rgba(245,241,238,.67); text-stroke: 1px rgba(245,241,238,.67); }
+.hero-copy { font-size: clamp(20px, 2.5vw, 30px); color: #e6dcde; margin: 0 0 30px; max-width: 720px; }
+.hero-copy strong { color: #fff; }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 20px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: .11em;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.button-primary { background: var(--red-bright); color: white; box-shadow: 0 12px 35px rgba(209,27,52,.22); }
+.button-primary:hover { background: #e4253f; transform: translateY(-1px); }
+.button-ghost { border-color: var(--line); background: rgba(255,255,255,.03); color: white; }
+.button-ghost:hover { border-color: rgba(255,255,255,.3); background: rgba(255,255,255,.06); }
+.hero-note { margin-top: 30px; color: var(--muted); font-size: 14px; }
+
+.manifesto {
+  width: min(1400px, calc(100% - 30px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 18px;
+  color: #d9d0d2;
+}
+.manifesto-line { height: 1px; background: linear-gradient(90deg, transparent, rgba(209,27,52,.55)); }
+.manifesto-line:last-child { background: linear-gradient(90deg, rgba(209,27,52,.55), transparent); }
+.manifesto p { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-style: italic; font-size: clamp(18px, 2vw, 26px); text-align: center; }
+
+.two-col { display: grid; grid-template-columns: .95fr 1.05fr; gap: 70px; align-items: start; }
+h2 { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(38px, 5.8vw, 76px); line-height: .98; letter-spacing: -.035em; margin: 14px 0 24px; }
+h3 { margin: 0 0 8px; font-size: 20px; }
+.prose p, .lead { font-size: 18px; color: #d7cfd1; }
+.prose p:first-child { margin-top: 0; }
+
+.dark-panel {
+  width: min(1320px, calc(100% - 24px));
+  padding-left: clamp(20px, 5vw, 70px);
+  padding-right: clamp(20px, 5vw, 70px);
+  background: linear-gradient(145deg, rgba(255,255,255,.05), rgba(255,255,255,.015));
+  border: 1px solid var(--line);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.04), 0 35px 80px rgba(0,0,0,.3);
+}
+.cards { display: grid; gap: 16px; }
+.cards.three, .requirements { grid-template-columns: repeat(3, 1fr); }
+.card {
+  background: linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.02));
+  border: 1px solid var(--line);
+  padding: 26px;
+  min-height: 180px;
+}
+.card-number { display: block; color: var(--red-bright); font-size: 12px; font-weight: 800; letter-spacing: .14em; margin-bottom: 48px; }
+.card p { color: var(--muted); margin-bottom: 0; }
+.catalog-note { color: var(--muted); margin: 22px 0 0; font-size: 14px; }
+
+.join-grid { display: grid; grid-template-columns: 1fr .8fr; gap: 55px; align-items: end; }
+.location-strip { display: inline-block; margin-top: 22px; padding: 10px 14px; border-left: 3px solid var(--red-bright); background: rgba(255,255,255,.035); color: #e7dfe1; font-size: 14px; letter-spacing: .04em; }
+.roles { border-top: 1px solid var(--line); }
+.role { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.role span { font-family: Georgia, 'Times New Roman', serif; font-size: 25px; }
+.role strong { color: var(--red-bright); font-size: 11px; letter-spacing: .18em; }
+.requirements { margin-top: 55px; }
+.requirements .card { min-height: 0; }
+
+.audition-section { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.audition-layout { align-items: start; }
+.small-note { color: var(--muted); font-size: 13px; max-width: 520px; }
+.audition-form { display: grid; gap: 14px; background: rgba(255,255,255,.035); border: 1px solid var(--line); padding: 24px; }
+.audition-form label { display: grid; gap: 7px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: #d1c8ca; }
+.audition-form input, .audition-form textarea, .audition-form select {
+  width: 100%;
+  border: 1px solid rgba(255,255,255,.13);
+  background: #0c0c10;
+  color: white;
+  padding: 12px 13px;
+  border-radius: 0;
+  font: inherit;
+  text-transform: none;
+  letter-spacing: normal;
+}
+.audition-form input:focus, .audition-form textarea:focus, .audition-form select:focus { outline: 1px solid var(--red-bright); border-color: var(--red-bright); }
+
+.contact-section { text-align: center; }
+.contact-section h2 { max-width: 900px; margin-left: auto; margin-right: auto; }
+.contact-section p { color: var(--muted); }
+.contact-email { display: inline-block; margin: 12px 0 28px; font-size: clamp(18px, 3vw, 36px); font-family: Georgia, 'Times New Roman', serif; color: white; text-decoration-color: var(--red-bright); text-underline-offset: 7px; }
+.contact-foot { color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: .14em; }
+
+.site-footer { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; padding: 24px 0 40px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 20px; color: var(--muted); font-size: 12px; }
+.site-footer a { color: var(--muted); }
+
+@media (max-width: 820px) {
+  .site-nav { display: none; position: absolute; top: 67px; left: 0; right: 0; padding: 18px 20px; flex-direction: column; align-items: flex-start; background: rgba(9,9,11,.98); border-bottom: 1px solid var(--line); }
+  .site-nav.open { display: flex; }
+  .menu-toggle { display: inline-flex; background: transparent; color: white; border: 1px solid var(--line); padding: 8px 10px; text-transform: uppercase; letter-spacing: .1em; font-size: 11px; }
+  .two-col, .join-grid { grid-template-columns: 1fr; gap: 28px; }
+  .cards.three, .requirements { grid-template-columns: 1fr; }
+  .hero { min-height: 82vh; }
+  .hero h1 { font-size: clamp(62px, 19vw, 105px); }
+  .manifesto { grid-template-columns: 1fr; }
+  .manifesto-line { display: none; }
+  .section-pad { padding: 70px 0; }
+}
+
+@media (max-width: 520px) {
+  .brand-name { font-size: 16px; }
+  .hero-actions .button { width: 100%; }
+  .hero h1 { letter-spacing: -.07em; }
+  .site-footer { flex-direction: column; }
+}
+
+</style>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="BlackGlass Saints home">
+      <span class="brand-mark">BGS</span>
+      <span class="brand-name">BlackGlass Saints</span>
+    </a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+      <a href="#about">About</a>
+      <a href="#sound">Sound</a>
+      <a href="#join">Join</a>
+      <a href="#audition">Audition</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section-pad">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="eyebrow">Illinois • Original Music • Live Lineup Forming</div>
+      <h1>BLACKGLASS<br><span>SAINTS</span></h1>
+      <p class="hero-copy">Beautiful damage. Dark alt-rock with teeth.<br>Fronted by <strong>Nyka Snow</strong>.</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="#audition">Audition for the live lineup</a>
+        <a class="button button-ghost" href="mailto:blackglasssaints.music@gmail.com">Contact</a>
+      </div>
+      <div class="hero-note">Heavy guitars. Haunting atmosphere. Raw stories built to hit hard live.</div>
+    </section>
+
+    <section class="manifesto">
+      <div class="manifesto-line"></div>
+      <p>“If it doesn’t leave a mark, it isn’t finished.”</p>
+      <div class="manifesto-line"></div>
+    </section>
+
+    <section id="about" class="section-pad two-col">
+      <div>
+        <div class="section-kicker">01 / ABOUT</div>
+        <h2>Built from the things that should have broken us.</h2>
+      </div>
+      <div class="prose">
+        <p><strong>BlackGlass Saints</strong> is a dark alternative rock / alt-metal project fronted by recording artist <strong>Nyka Snow</strong>.</p>
+        <p>The project lives where heavy guitars, haunting atmosphere and emotionally raw storytelling collide. The music is already being written and recorded. Now the next chapter is becoming physical: a performance-ready live band built to turn those songs into something bigger than the room.</p>
+        <p>This is not a casual jam project. The goal is a serious live identity, strong visual world, original releases, collaboration and stages worth remembering.</p>
+      </div>
+    </section>
+
+    <section id="sound" class="section-pad dark-panel">
+      <div class="section-kicker">02 / THE SOUND</div>
+      <h2>Dark enough to haunt you.<br>Loud enough to survive it.</h2>
+      <div class="cards three">
+        <article class="card">
+          <span class="card-number">01</span>
+          <h3>Dark Alt-Rock</h3>
+          <p>Melodic hooks with grit, tension and emotional weight.</p>
+        </article>
+        <article class="card">
+          <span class="card-number">02</span>
+          <h3>Alt-Metal Edge</h3>
+          <p>Heavy guitars, dynamic drums and arrangements designed to hit hard on stage.</p>
+        </article>
+        <article class="card">
+          <span class="card-number">03</span>
+          <h3>Cinematic Atmosphere</h3>
+          <p>Haunting textures, dramatic builds and a visual world that belongs to the music.</p>
+        </article>
+      </div>
+      <p class="catalog-note">Recorded references are shared directly with serious audition candidates.</p>
+    </section>
+
+    <section id="join" class="section-pad">
+      <div class="section-kicker">03 / JOIN BLACKGLASS SAINTS</div>
+      <div class="join-grid">
+        <div>
+          <h2>The live lineup is forming now.</h2>
+          <p class="lead">Looking for musicians who want to build something real — not just talk about starting a band someday.</p>
+          <div class="location-strip">Kewanee • Galesburg • Quad Cities • Peoria</div>
+        </div>
+        <div class="roles">
+          <div class="role"><span>Guitar</span><strong>OPEN</strong></div>
+          <div class="role"><span>Bass</span><strong>OPEN</strong></div>
+          <div class="role"><span>Drums</span><strong>OPEN</strong></div>
+          <div class="role"><span>Keys / Synth</span><strong>OPEN</strong></div>
+        </div>
+      </div>
+
+      <div class="cards requirements">
+        <article class="card">
+          <h3>Show up prepared.</h3>
+          <p>Reliable communication, consistent rehearsals and the ability to learn existing original material matter as much as chops.</p>
+        </article>
+        <article class="card">
+          <h3>Serve the song.</h3>
+          <p>Bring personality and ideas without turning every arrangement into an ego contest.</p>
+        </article>
+        <article class="card">
+          <h3>Be ready to move.</h3>
+          <p>Live performance is the point. Candidates should be open to travel if larger opportunities arise.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="audition" class="section-pad audition-section">
+      <div class="section-kicker">04 / AUDITION</div>
+      <div class="two-col audition-layout">
+        <div>
+          <h2>Think you belong here?</h2>
+          <p class="lead">Send the basics. If the fit looks right, we’ll move to playing samples and the next step.</p>
+          <p class="small-note">This form does not store your information on the website. It opens your email app with your answers filled in.</p>
+        </div>
+        <form id="audition-form" class="audition-form">
+          <label>Name<input id="name" name="name" required /></label>
+          <label>Instrument
+            <select id="instrument" name="instrument" required>
+              <option value="">Choose one</option>
+              <option>Guitar</option>
+              <option>Bass</option>
+              <option>Drums</option>
+              <option>Keys / Synth</option>
+              <option>Other</option>
+            </select>
+          </label>
+          <label>City / Area<input id="location" name="location" required /></label>
+          <label>Playing / performance experience<textarea id="experience" name="experience" rows="3"></textarea></label>
+          <label>General rehearsal availability<input id="availability" name="availability" /></label>
+          <label>Link to audio/video of you playing<input id="link" name="link" type="url" placeholder="https://" /></label>
+          <label>Can you travel for performances?
+            <select id="travel" name="travel">
+              <option>Yes</option>
+              <option>Sometimes / depends</option>
+              <option>No</option>
+            </select>
+          </label>
+          <label>Anything else?<textarea id="message" name="message" rows="4"></textarea></label>
+          <button class="button button-primary" type="submit">Email my audition</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="contact" class="section-pad contact-section">
+      <div class="section-kicker">05 / CONTACT</div>
+      <h2>Booking. Collaboration. Auditions.</h2>
+      <p>For musician auditions, booking inquiries, media or collaborations:</p>
+      <a class="contact-email" href="mailto:blackglasssaints.music@gmail.com">blackglasssaints.music@gmail.com</a>
+      <div class="contact-foot">BlackGlass Saints • Illinois • Fronted by Nyka Snow</div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© <span id="year"></span> BlackGlass Saints</span>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+
+<script>
+const menuButton = document.querySelector('.menu-toggle');
+const nav = document.querySelector('.site-nav');
+
+if (menuButton && nav) {
+  menuButton.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    menuButton.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      menuButton.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const form = document.getElementById('audition-form');
+form?.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const value = (id) => document.getElementById(id)?.value?.trim() || 'Not provided';
+  const name = value('name');
+  const instrument = value('instrument');
+
+  const subject = `BlackGlass Saints audition — ${instrument} — ${name}`;
+  const body = [
+    'BLACKGLASS SAINTS AUDITION',
+    '',
+    `Name: ${name}`,
+    `Instrument: ${instrument}`,
+    `City / Area: ${value('location')}`,
+    '',
+    'Experience:',
+    value('experience'),
+    '',
+    `General rehearsal availability: ${value('availability')}`,
+    `Playing sample link: ${value('link')}`,
+    `Travel for performances: ${value('travel')}`,
+    '',
+    'Anything else:',
+    value('message')
+  ].join('\n');
+
+  window.location.href = `mailto:blackglasssaints.music@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+});
+
+</script>
+</body>
+</html>
