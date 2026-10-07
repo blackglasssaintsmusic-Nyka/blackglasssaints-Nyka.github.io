@@ -1,3 +1,26 @@
+
+
+Skip to content
+Using Gmail with screen readers
+1 of 23
+BlackGlass Saints homepage file (index.html)
+Inbox
+
+blackglasssaints.music@gmail.com
+Attachments
+6:24 AM (15 minutes ago)
+to me
+
+Hey Nyka — here is the updated homepage file (index.html) with the new Lineup section (Nyka Snow / Zakk / Rock, bass and keys open) and the join form fixed.
+
+On your laptop:
+1. Open this attached file and copy all the text (Ctrl+A, Ctrl+C).
+2. In GitHub, open index.html, click Edit (the pencil icon), select all, delete, paste your copied text, then Commit changes.
+3. Give the site a couple minutes, then check the live site for the Lineup section.
+
+— Rion
+ One attachment
+  •  Scanned by Gmail
 <!doctype html>
 <html lang="en">
 <head>
@@ -190,6 +213,8 @@ h3 { margin: 0 0 8px; font-size: 20px; }
 .role { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 16px 0; border-bottom: 1px solid var(--line); }
 .role span { font-family: Georgia, 'Times New Roman', serif; font-size: 25px; }
 .role strong { color: var(--red-bright); font-size: 11px; letter-spacing: .18em; }
+.role strong.filled { color: var(--muted); opacity: .55; }
+.role strong.name { color: var(--text); }
 .requirements { margin-top: 55px; }
 .requirements .card { min-height: 0; }
 
@@ -253,6 +278,7 @@ h3 { margin: 0 0 8px; font-size: 20px; }
     <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
       <a href="#about">About</a>
       <a href="#sound">Sound</a>
+      <a href="#lineup">Lineup</a>
       <a href="#join">Join</a>
       <a href="#audition">Audition</a>
       <a href="#contact">Contact</a>
@@ -313,8 +339,25 @@ h3 { margin: 0 0 8px; font-size: 20px; }
       <p class="catalog-note">Recorded references are shared directly with serious audition candidates.</p>
     </section>
 
+    <section id="lineup" class="section-pad">
+      <div class="section-kicker">03 / THE LINEUP</div>
+      <div class="join-grid">
+        <div>
+          <h2>Meet the Saints.</h2>
+          <p class="lead">The core is set. Two chairs are still empty — and they&apos;ve got your name on them.</p>
+        </div>
+        <div class="roles">
+          <div class="role"><span>Nyka Snow</span><strong class="name">FRONTWOMAN</strong></div>
+          <div class="role"><span>Zakk</span><strong class="name">LEAD GUITAR</strong></div>
+          <div class="role"><span>Rock</span><strong class="name">DRUMS</strong></div>
+          <div class="role"><span>Bass</span><strong>OPEN</strong></div>
+          <div class="role"><span>Keys / Synth</span><strong>OPEN</strong></div>
+        </div>
+      </div>
+    </section>
+
     <section id="join" class="section-pad">
-      <div class="section-kicker">03 / JOIN BLACKGLASS SAINTS</div>
+      <div class="section-kicker">04 / JOIN BLACKGLASS SAINTS</div>
       <div class="join-grid">
         <div>
           <h2>The live lineup is forming now.</h2>
@@ -322,9 +365,9 @@ h3 { margin: 0 0 8px; font-size: 20px; }
           <div class="location-strip">Kewanee • Galesburg • Quad Cities • Peoria</div>
         </div>
         <div class="roles">
-          <div class="role"><span>Guitar</span><strong>OPEN</strong></div>
+          <div class="role"><span>Guitar</span><strong class="filled">FILLED</strong></div>
           <div class="role"><span>Bass</span><strong>OPEN</strong></div>
-          <div class="role"><span>Drums</span><strong>OPEN</strong></div>
+          <div class="role"><span>Drums</span><strong class="filled">FILLED</strong></div>
           <div class="role"><span>Keys / Synth</span><strong>OPEN</strong></div>
         </div>
       </div>
@@ -346,7 +389,7 @@ h3 { margin: 0 0 8px; font-size: 20px; }
     </section>
 
     <section id="audition" class="section-pad audition-section">
-      <div class="section-kicker">04 / AUDITION</div>
+      <div class="section-kicker">05 / AUDITION</div>
       <div class="two-col audition-layout">
         <div>
           <h2>Think you belong here?</h2>
@@ -358,9 +401,7 @@ h3 { margin: 0 0 8px; font-size: 20px; }
           <label>Instrument
             <select id="instrument" name="instrument" required>
               <option value="">Choose one</option>
-              <option>Guitar</option>
               <option>Bass</option>
-              <option>Drums</option>
               <option>Keys / Synth</option>
               <option>Other</option>
             </select>
@@ -383,7 +424,7 @@ h3 { margin: 0 0 8px; font-size: 20px; }
     </section>
 
     <section id="contact" class="section-pad contact-section">
-      <div class="section-kicker">05 / CONTACT</div>
+      <div class="section-kicker">06 / CONTACT</div>
       <h2>Booking. Collaboration. Auditions.</h2>
       <p>For musician auditions, booking inquiries, media or collaborations:</p>
       <a class="contact-email" href="mailto:blackglasssaints.music@gmail.com">blackglasssaints.music@gmail.com</a>
@@ -449,3 +490,5 @@ form?.addEventListener('submit', (event) => {
 </script>
 </body>
 </html>
+index.html
+Displaying index.html.
